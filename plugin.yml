@@ -1,0 +1,37 @@
+name: AutoBackup
+main: org.myftp.p_productions.AutoBackup.AutoBackup
+version: __build.number__
+commands:
+  autobackup:
+    description: Main Autobackup command
+    usage: /<command> <start|stop|now>
+    aliases: ab
+    
+permissions:
+  autobackup.*:
+    description: Gives access to all Varo commands
+    children:
+      autobackup.start: true
+      autobackup.stop: true
+      autobackup.now: true
+      autobackup.autobackup: true
+      autobackup.msg: true
+    default: op
+  autobackup.autobackup:
+    description: Allows to use the autobackup command
+    default: op
+  autobackup.start:
+    description: Allows to start the auto backup
+    default: op
+  autobackup.stop:
+    description: Allows to stop the auto backup
+    default: op
+  autobackup.now:
+    description: Allows to backup now
+    default: op
+  autobackup.enable:
+    description: Allows to start the auto backup silently
+    default: op
+  autobackup.msg:
+    description: Allows recieve autobackup msg
+    default: op
